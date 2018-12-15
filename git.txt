@@ -1,0 +1,90 @@
+自己建的项目目录文件夹内  
+1 右键--打开Git Bash Here ----输入git init 初始化git仓库
+
+2 配置全局用户名：
+  git config --global user.name  "自己的用户名"
+ 配置全局用户邮箱：
+   git config --global user.email  "自己的邮箱"
+
+  git config --list 查看刚刚的设置的用户名和密码
+
+删除邮箱名  git config --global --unset user.email
+
+
+3 .  git status    查看提交状态
+    git add ./   添加文件到暂存区门口
+    git commit -m ‘提交描述’(描述随便写)
+    --执行完了- 将门口的文件正式的放进了暂存区--这一步式真正的添加
+（新建文件夹之后，输入命令，git status 可以查询到新增加的文件，输入 git add ./  就会添加这个文件 git commit -m"添加xx" 正式添加）
+
+4. 如果有文件不想被上传
+设置忽略文件 .gitignore
+（先增加忽略文件——再在文件里面写 要忽略的文件或者文件夹 一行只能写一个  命名.gitignore.）
+
+5 查日志
+   git log 查看之前的提交记录
+   git log --oneline 查看简洁版一行 提交记录
+   git reflog 比git log高级 可以查到所有的操作记录
+
+6 回退
+   git reset --hard 版本号 回退到对应的版本号
+
+7.   wq    ctrl+c 保存并退出
+
+8. 分支
+ git branch 分支名字       新建一个分支
+ git checkout -b 分支名字  新键分支并切换
+ git branch                      查看所有的分支
+ git checkout 分支名字 切换到我们创建的分支上
+ git checkout 分支名字 -- 可以来回切换
+
+git branch -d 分支名 ----删除分支
+
+9.合并
+ git merge
+ a合并到b上 先到b上面 在命令 git merge a
+
+10.冲突解决
+  合并时候如果产生两个一样的 先确定要保留哪个文件或者能不能共存 把分隔符删除 -- 再重新提交 add
+
+
+码农 用户名1013109374@qq.com
+        密码 wx930726
+git 邮箱 xiaoxiang@qq.com
+
+--------------------------------------
+
+12. 下拉 上传
+ git push          推送到远程仓库
+ git pull            从远程仓库下拉
+
+13. 克隆
+ git clone 仓库地址
+（从远程仓库克隆到本地，已经默认关联好）
+  码云上面的直接复制
+ 
+
+克隆--是原封不动的把所有的拉到本地
+pull -- 跟本地进行对比，把差异化的部分在下拉到本地
+
+
+*********总结工作上使用*********： 
+push团队项目的时候 
+ 1.百度 ssh key生成 随便找一个key 复制下来 打开git bash 执行
+ 2.本地c盘-用户-找到.ssh文件 
+ 3.id_rsa.pub 文件复制公钥到远程库 生成公共密钥（本地仓库与远程仓库建立连接）
+ 4.先在远程上创建一个仓库
+ 5.通过git clone ssh克隆地址 --将远程仓库克隆到本地
+ 6. git add ./   --- git commit -m " xx" ---git push
+ 先拉 git pull 再加git push
+ 7.把自己的文件传到远程仓库
+ 8.创建分支 可以创建多个分支 某个分支功能写完之后在github上请求合并主分支 之后  再github上可以删除这个已经合并了的分支
+ 9.在本地 执行 这个分支git merge 分支名 合并
+公钥私钥是一对一的 公钥是给大家看的 私钥是本地是自己看的，公钥是用来加密的
+(---- 执行顺序pull - commit - push---)
+1.在本地修改与远程代码无冲突的情况下，优先使用：pull->commit->push 
+2.在本地修改与远程代码有冲突的情况下，优先使用：commit->pull->push
+**** 
+
+
+
